@@ -1,0 +1,4 @@
+enum StateTime{
+  pagi,
+  malam
+}
