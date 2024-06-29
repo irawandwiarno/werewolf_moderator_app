@@ -12,7 +12,7 @@ class Troblemaker extends BaseRole {
                 id: RoleId.troblemaker,
                 roleName: "Troblemaker",
                 description:
-                    "Troublemaker memiliki kemampuan untuk menukar kartu peran dua pemain lain selama fase malam, tanpa melihat kartu-kartu tersebut",
+                    "Troblemaker dapat membunuh 1 pemain dalam permain",
                 image: "assets/image/role/troublemaker.jpg"),
   defaultPerintah: "Gunakan kekuatan untuk membunuh player 1 kali dalam permainan"
   );

@@ -13,7 +13,7 @@ class Prince extends BaseRole {
                 id: RoleId.prince,
                 roleName: "Prince",
                 description:
-                    "Saat prince tervote maka prince dapat menunjukan kartunya pada pemain dan vote terbatalkan",
+                    "Saat prince tervote maka prince dapat menunjukan kartunya pada pemain dan prince memilih seorang untuk mati",
                 image: "assets/image/role/prince.jpg"),
             defaultPerintah: "Next aja");
 

@@ -13,7 +13,7 @@ class Doppelganger extends BaseRole {
                 id: RoleId.doppelganger,
                 roleName: "Doppelganger",
                 description:
-                    "Nenilih pemain lain untuk di copy saat pemain tersebut mati",
+                    "Nemilih pemain lain untuk di copy saat pemain tersebut mati",
                 image: "assets/image/role/doppelganger.jpg"),
             defaultPerintah: "Next aja");
 
