@@ -6,16 +6,17 @@ class CardPlusMinController extends GetxController {
   TextEditingController textEditingController = TextEditingController();
   SelectCardController selectCardController = Get.find<SelectCardController>();
 
+
   var count = 0.obs;
 
-  void plus(BaseRole cardRole) {
-    selectCardController.tempCard.add(cardRole);
+  void plus({required int roleId}) {
+    selectCardController.tambahData(index: roleId);
     count.value++;
   }
 
-  void min(BaseRole cardRole) {
+  void min({required int roleId}) {
     if (count.value > 0) {
-      selectCardController.tempCard.remove(cardRole);
+      selectCardController.kurangiData(index: roleId);
       count.value--;
     }
   }

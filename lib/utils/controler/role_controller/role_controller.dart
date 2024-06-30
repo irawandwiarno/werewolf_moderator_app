@@ -14,3 +14,5 @@ export 'prince.dart';
 export 'spellcaster.dart';
 export 'werewolf.dart';
 export 'witch.dart';
+export 'mayor.dart';
+export 'sorceress.dart';

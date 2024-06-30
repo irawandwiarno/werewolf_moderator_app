@@ -6,23 +6,17 @@ import 'package:ww_moderator/utils/components/components.dart';
 import 'package:ww_moderator/utils/controler/role_controller/role_controller.dart';
 import 'package:ww_moderator/utils/controler/role_id.dart';
 
-class Villager extends BaseRole {
-  Villager()
+class Mayor extends BaseRole {
+  Mayor()
       : super(
-            dataCard: new DataCard(
-                id: RoleId.villager,
-                roleName: "Villager",
-                description: "Just normal people",
-                image: "assets/image/role/villager.jpg"),
-            defaultPerintah: "Next aja");
+      dataCard: new DataCard(
+          id: RoleId.mayor,
+          roleName: "Mayor",
+          description: "Vote dari mayor di hitung 2",
+          image: "assets/image/role/mayor.jpg"),
+      defaultPerintah: "Next aja");
 
   GameManagement gameManagement = Get.find<GameManagement>(tag: "GM");
-
-  @override
-  void onInit() {
-    dataCard.testId = "vilager1";
-    super.onInit();
-  }
 
   @override
   void chooseAction(int indexChoosedCard) {

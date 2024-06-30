@@ -6,20 +6,26 @@ import 'package:ww_moderator/utils/components/components.dart';
 import 'package:ww_moderator/utils/controler/role_controller/role_controller.dart';
 import 'package:ww_moderator/utils/controler/role_id.dart';
 
-class Seer extends BaseRole {
-  Seer()
+class Sorceress extends BaseRole {
+  Sorceress()
       : super(
-            dataCard: new DataCard(
-                id: RoleId.seer,
-                roleName: "Seer",
-                description:
-                    "Memilih seseorang untuk mengetahui apakah dia WW atau bukan",
-                image: "assets/image/role/seer.jpg"),
-            defaultPerintah:
-                "Pilih player untuk di lihat apakah dia villager atau werewolf");
+      dataCard: new DataCard(
+          id: RoleId.sorceress,
+          roleName: "Sorceress",
+          description:
+          "Memilih seseorang untuk mengetahui apakah dia Seer/mystic seer atau bukan",
+          image: "assets/image/role/sorceress.jpg"),
+      defaultPerintah:
+      "Pilih player untuk di lihat apakah dia Seer");
 
   int maxChoose = 1;
   GameManagement gameManagement = Get.find<GameManagement>(tag: "GM");
+
+  @override
+  void onInit() {
+    dataCard.subRole = "Villager";
+    super.onInit();
+  }
 
   @override
   void chooseAction(int indexChoosedCard) {
@@ -37,22 +43,13 @@ class Seer extends BaseRole {
     super.chooseAction(indexChoosedCard);
   }
 
-  dynamic checkRole(BaseRole otherObject) {
-    if (otherObject.dataCard.id == RoleId.werewolf) {
+  bool checkRole(BaseRole otherObject){
+    if(otherObject.dataCard.id == RoleId.seer){
       return true;
     }
-
-    if (otherObject.dataCard.subRole != null) {
-      if (otherObject is Drunk) {
-        if (otherObject.roleAsli.dataCard.id == RoleId.werewolf) {
-          return true;
-        }
-      }
-      if(otherObject is Sorceress){
-        return false;
-      }
+    if(otherObject.dataCard.id == RoleId.mystic_seer){
+      return true;
     }
-
     return false;
   }
 

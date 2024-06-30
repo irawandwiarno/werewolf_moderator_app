@@ -10,7 +10,8 @@ class CardPlusMin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final CardPlusMinController controller = Get.find<CardPlusMinController>(tag: tag);
+    final CardPlusMinController controller =
+        Get.find<CardPlusMinController>(tag: tag);
     return Card(
       color: MyColors.bgCard,
       shape: RoundedRectangleBorder(
@@ -19,8 +20,10 @@ class CardPlusMin extends StatelessWidget {
       elevation: 5,
       child: Container(
         decoration: BoxDecoration(
-          border: Border.all(color: MyColors.outline, width: 4), // Outline color and width
-          borderRadius: BorderRadius.circular(15.0), // Same as Card's borderRadius
+          border: Border.all(
+              color: MyColors.outline, width: 4), // Outline color and width
+          borderRadius:
+              BorderRadius.circular(15.0), // Same as Card's borderRadius
         ),
         padding: EdgeInsets.all(16.0),
         child: Row(
@@ -54,7 +57,8 @@ class CardPlusMin extends StatelessWidget {
                     children: [
                       IconButton(
                         icon: Icon(Icons.remove),
-                        onPressed: () => controller.min(cardRole),
+                        onPressed: () =>
+                            controller.min(roleId: cardRole.dataCard.id),
                       ),
                       Container(
                         width: 40,
@@ -73,7 +77,8 @@ class CardPlusMin extends StatelessWidget {
                       ),
                       IconButton(
                         icon: Icon(Icons.add),
-                        onPressed: () => controller.plus(cardRole),
+                        onPressed: () =>
+                            controller.plus(roleId: cardRole.dataCard.id),
                       ),
                     ],
                   ),

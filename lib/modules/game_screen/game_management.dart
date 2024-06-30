@@ -157,6 +157,10 @@ class GameManagement extends GetxController {
     updateActiveRole(indexOfCard: 0);
     activeRole.value = dataRole[0];
     displayPromt.add(activeRole.value.basicAction());
+    for(var player in dataPlayer){
+
+    print('data player test id : ${player.dataCard.testId}');
+    }
   }
 
   void sortDataPlayer() {

@@ -12,18 +12,30 @@ class SelectCardRoleView extends GetView<SelectCardController> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-          backgroundColor: MyColors.backgroundApp,
+      backgroundColor: MyColors.backgroundApp,
       appBar: AppBar(
         title: Obx(
           () => Text(
-            "Jumlah Pemain: ${controller.tempCard.length}",
-            style: MyText.h3(),
+            "Pemain: ${controller.playerCount.value}",
+            style: MyText.h4(),
           ),
         ),
+        actions: [
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: MyColors.varianGreen,
+
+            ),
+              onPressed: ()=> controller.buttonMulai(),
+              child: Text(
+                "Mulai",
+                style: MyText.h3(color: MyColors.defaultWhite),
+              ))
+        ],
       ),
       body: ListView.builder(
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-          itemCount: controller.listCardRole.length,
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          itemCount: controller.lengData,
           itemBuilder: (context, index) {
             Get.put(CardPlusMinController(), tag: "CPMC$index");
             return CardPlusMin(

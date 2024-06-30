@@ -8,6 +8,7 @@ class DataCard {
   final String description;
   final String image;
   String? subRole;
+  String testId = "";
 
   String playerName = 'Tidak tau';
 

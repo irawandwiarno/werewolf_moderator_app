@@ -56,6 +56,7 @@ class Prince extends BaseRole {
           gameManagement.updatePosisionScrollWithObject(dataPlayer: this, scrollValue: 90);
           gameManagement.updateActiveRoleWithPlayerData(dataPlayer: this);
         },
+      withBack: false
     );
   }
 

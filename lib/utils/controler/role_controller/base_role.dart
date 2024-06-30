@@ -18,6 +18,7 @@ class BaseRole extends GetxController {
   RxInt voteCount = 0.obs;
   int? maxUseSkill;
 
+
   BaseRole({
     required this.dataCard,
     required this.defaultPerintah,

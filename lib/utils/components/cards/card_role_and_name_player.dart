@@ -32,6 +32,7 @@ class CardRoleAndNamePlayer extends StatelessWidget {
 
     return GestureDetector(
       onTap: () {
+        print('=== $tagController');
         controller.onChoose(indexChoosedCard: indexOfCard);
       },
       child: Obx(() => Container(
